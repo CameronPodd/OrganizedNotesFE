@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import post from './../classes/httprequests';
 import '.././style/AddCard.css';
 
 class AddCard extends Component {

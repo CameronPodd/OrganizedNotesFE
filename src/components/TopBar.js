@@ -9,13 +9,15 @@ class TopBar extends Component {
 		return (
 			<div className="TopBar">
 				<table>
-					<tr>
-						<td id="Logo">
-							<img id="logo" src={Logo} alt="logo"/>
-						</td>
-						<td id="Title">Quick and Organized Notes</td>
-						<td id="AddCard"><AddCard /></td>
-					</tr>
+					<tbody>
+						<tr>
+							<td id="Logo">
+								<img id="logo" src={Logo} alt="logo"/>
+							</td>
+							<td id="Title">Quick and Organized Notes</td>
+							<td id="AddCard"><AddCard /></td>
+						</tr>
+						</tbody>
 				</table>
 			</div>
 		);

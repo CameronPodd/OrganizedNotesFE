@@ -1,7 +1,9 @@
 /** @file httprequests.js */
 
+const startURL = "http://localhost:8000/"
+
 export function post(url = ``, data = {}) {
-    return fetch(url, {
+    return fetch((startURL + url), {
         method: "POST", 
         credentials: "include",
         headers: {
@@ -13,7 +15,7 @@ export function post(url = ``, data = {}) {
 }
 
 export function get(url = ``) {
-    return fetch(url, {
+    return fetch((startURL + url), {
         method: "GET", 
         credentials: "include",
     })
