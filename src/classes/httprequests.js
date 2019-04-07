@@ -3,7 +3,7 @@ import Axios from "axios";
 
 /** @file httprequests.js */
 
-const startURL = "http://localhost:8000/"
+const startURL = "https://leftorganizednotesbe.appspot.com/api"
 
 export function post(url = ``, data = '{}') {
     return Axios.post(startURL + url, data);

@@ -4,7 +4,7 @@ import {post} from './httprequests';
 
 class PostNote {
   constructor(state) {
-    this.title = state.title;
+    this.title = state.name;
     this.body = state.body;
 
     this.links = [];
@@ -21,7 +21,7 @@ class PostNote {
       this.links.push(state.l2);
     }
     
-		this.date = new Date(/*Date.now() - ((new Date()).getTimezoneOffset() * 60000)*/);
+		this.date = new Date();
   }
 
   toJSON() {
@@ -29,6 +29,7 @@ class PostNote {
       "title": this.title, 
       "body": this.body,
       "time": {
+        "year": this.date.getFullYear(),
         "month": this.date.getMonth(),
         "day": this.date.getDate(),
         "hours": this.date.getHours(),
@@ -41,7 +42,7 @@ class PostNote {
   }
 
   post() {
-    return post('cards', this.toJSON());
+    return post('/cards', this.toJSON());
   }
 }
 

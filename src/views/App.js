@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../style/App.css';
-import StatusArea from '../components/StatusArea';
+import Section from '../components/Section';
 import TopBar from '../components/TopBar';
 import {get} from '../classes/httprequests';
 
@@ -32,12 +32,12 @@ class App extends Component {
 		return (
 			<div className="App">
 				<TopBar />
-				<StatusArea time="Today" cards={this.state.cards.today} />
-				<StatusArea time="Yesterday" cards={this.state.cards.yesterday} />
-				<StatusArea time="This Week" cards={this.state.cards.week} />
-				<StatusArea time="This Month" cards={this.state.cards.month} />
-				<StatusArea time="This Year" cards={this.state.cards.year} />
-				<StatusArea time="Older" cards={this.state.cards.old} />
+				<Section time="Today" cards={this.state.cards.today} />
+				<Section time="Yesterday" cards={this.state.cards.yesterday} />
+				<Section time="This Week" cards={this.state.cards.week} />
+				<Section time="This Month" cards={this.state.cards.month} />
+				<Section time="This Year" cards={this.state.cards.year} />
+				<Section time="Older" cards={this.state.cards.old} />
 			</div>
 		);
 	}
