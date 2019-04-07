@@ -9,12 +9,18 @@ class AddCardPopup extends Component {
 
     this.state = {
       name: '',
-      body: ''
+      body: '',
+      l0: '',
+      l1: '',
+      l2: ''
     }
 
     this.createPostCard = this.createPostCard.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleBodyChange = this.handleBodyChange.bind(this);
+    this.handleL0Change = this.handleL0Change.bind(this);
+    this.handleL1Change = this.handleL1Change.bind(this);
+    this.handleL2Change = this.handleL2Change.bind(this);
   }
 
   handleNameChange(e) {
@@ -25,10 +31,21 @@ class AddCardPopup extends Component {
     this.setState({body: e.target.value});
   }
 
+  handleL0Change(e) {
+    this.setState({l0: e.target.value});
+  }
+
+  handleL1Change(e) {
+    this.setState({l1: e.target.value});
+  }
+
+  handleL2Change(e) {
+    this.setState({l2: e.target.value});
+  }
+
   createPostCard(e) {
     e.preventDefault();
-    let postNote = new PostNote(this.state.name, this.state.body);
-    console.log(postNote.toJSON());
+    let postNote = new PostNote(this.state);
     this.props.togglePopup();
     postNote.post()
       .then(res => {
@@ -50,6 +67,13 @@ class AddCardPopup extends Component {
             <br />
             Body<br />
             <textarea rows="6" cols="50" name="body" value={this.state.body} onChange={this.handleBodyChange} /><br />
+            <br />
+            Add up to Three Links<br />
+            <input type="url" name="link0" value={this.state.link0} onchange={this.handL0Change} /> <br />
+            <br />
+            <input type="url" name="link1" value={this.state.link1} onchange={this.handL1Change} /> <br />
+            <br />
+            <input type="url" name="link2" value={this.state.link2} onchange={this.handL2Change} /> <br />
             <br />
             <input type="submit" name="submit" value="Submit Note" />
           </form>

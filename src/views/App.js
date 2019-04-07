@@ -20,9 +20,9 @@ class App extends Component {
 		get('cards')
 			.then(res => {
 				this.state = {
-					cards: res
-				}}
-			)
+					cards: res.data.cards
+				}
+			})
 			.catch(err => {
 				console.log(err);
 			})
