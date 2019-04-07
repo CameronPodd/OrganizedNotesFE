@@ -18,6 +18,8 @@ class PostNote {
   }
 
   post() {
-    post('/cards', this.toJSON());
+    return post('/cards', this.toJSON());
   }
 }
+
+export default PostNote;

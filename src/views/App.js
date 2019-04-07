@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './style/App.css';
-import StatusArea from './components/StatusArea';
-import TopBar from './components/TopBar';
-import {get} from './classes/httprequests';
+import '../style/App.css';
+import StatusArea from '../components/StatusArea';
+import TopBar from '../components/TopBar';
+import {get} from '../classes/httprequests';
 
 class App extends Component {
 	constructor(props) {

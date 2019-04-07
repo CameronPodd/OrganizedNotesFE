@@ -14,9 +14,7 @@ class StatusArea extends Component {
 
 	render() {
 		/*if (this.state.invisible) {
-			return (
-				<div className="invisible"></div>
-			);
+			return null;
 		}*/
 		return (
 			<div className="StatusArea">
