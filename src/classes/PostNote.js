@@ -7,17 +7,17 @@ class PostNote {
     this.title = state.title;
     this.body = state.body;
 
-    this.links = Array();
+    this.links = [];
 
-    if (state.l0 != '') {
+    if (state.l0 !== '') {
       this.links.push(state.l0);
     }
 
-    if (state.l1 != '') {
+    if (state.l1 !== '') {
       this.links.push(state.l1);
     }
 
-    if (state.l2 != '') {
+    if (state.l2 !== '') {
       this.links.push(state.l2);
     }
     

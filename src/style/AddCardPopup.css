@@ -3,7 +3,7 @@
 .AddCardPopup {
     position: absolute;
     display: block;
-    height: 400px;
+    height: 450px;
     margin-top: 48px;
     margin-left: -62.5%;
     width: 75%;
@@ -13,4 +13,14 @@
 
 #title {
 	font-size: 24pt;
+}
+
+#submit {
+	height: 30px;
+	width: 30%;
+	border: transparent;
+	background-color: pink;
+	border-radius: 10px;
+	font-size: 16pt;
+	color: navy;
 }

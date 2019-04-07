@@ -69,13 +69,13 @@ class AddCardPopup extends Component {
             <textarea rows="6" cols="50" name="body" value={this.state.body} onChange={this.handleBodyChange} /><br />
             <br />
             Add up to Three Links<br />
-            <input type="url" name="link0" value={this.state.link0} onchange={this.handL0Change} /> <br />
+            <input type="url" name="link0" value={this.state.link0} onChange={this.handL0Change} /> <br />
             <br />
-            <input type="url" name="link1" value={this.state.link1} onchange={this.handL1Change} /> <br />
+            <input type="url" name="link1" value={this.state.link1} onChange={this.handL1Change} /> <br />
             <br />
-            <input type="url" name="link2" value={this.state.link2} onchange={this.handL2Change} /> <br />
+            <input type="url" name="link2" value={this.state.link2} onChange={this.handL2Change} /> <br />
             <br />
-            <input type="submit" name="submit" value="Submit Note" />
+            <input type="submit" id="submit" name="submit" value="Submit Note" />
           </form>
         </div>
 			</div>
