@@ -28,7 +28,12 @@ class Section extends Component {
 				break;
 			case "Yesterday":
 				break;
-			
+			case "This Week":
+				break;
+			case "This Month":
+				break;
+			case "Older":
+				break;
 		}
 	}
 
