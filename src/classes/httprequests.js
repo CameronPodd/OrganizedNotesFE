@@ -3,9 +3,10 @@ import Axios from "axios";
 /** @file httprequests.js */
 
 const startURL = "https://leftorganizednotesbe.appspot.com/api/cards"
+//const startURL = "http://localhost:8080/api/cards"
 
 export function post(data = {}) {
-    return Axios.post(startURL, JSON.stringify(data));
+    return Axios.post(startURL, data);
 }
 
 export function getByDate(sm, em, sd, ed) {
@@ -21,7 +22,7 @@ export function getAll() {
 }
 
 export function put(id, data = {}) {
-    return Axios.put(`${startURL}/${id}`, JSON.stringify(data));
+    return Axios.put(`${startURL}/${id}`, data);
 }
 
 export function del(id) {

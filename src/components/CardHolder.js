@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import Card from './Card';
+import Row from './Row';
 import '../style/CardHolder.css';
 
 class CardHolder extends Component {
-
-  constructor(props) {
-    super(props);
-    console.log(this.props.cards);
-    console.log(window.innerWidth);
-  }
 
   render() {
     if (this.props.cards.length === 0) {
@@ -18,14 +12,19 @@ class CardHolder extends Component {
 			  </div>
       );
     }
-    let cds = [];
-    for (let i = 0; i < this.props.cards.length; i++) {
-      cds.push(<Card data={this.props.cards[i]} removeCard={this.props.removeCard} key={i} />);
+
+    let rows = Math.ceil((this.props.cards.length * 200) / window.innerWidth);
+    let cpr = Math.ceil(this.props.cards.length / rows);
+    let rend = [];
+    for (let i = 0; i < rows; i++) {
+      let cdsnew = this.props.cards;
+      let cds = cdsnew.slice(cpr * i, cpr * (i + 1));
+      rend.push(<Row cards={cds} removeCard={this.props.removeCard} key={i} />);
     }
 		return (
-			<div className="CardHolder">
-        {cds}
-			</div>
+      <div id="CardHolder">
+        {rend}
+      </div>
 		);
 	}
 }

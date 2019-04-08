@@ -49,8 +49,6 @@ class AddCardPopup extends Component {
     this.props.togglePopup();
     postNote.post()
       .then(res => {
-        let resData = res.data;
-        console.log(resData);
       })
       .catch(err => {
         console.log(err);
