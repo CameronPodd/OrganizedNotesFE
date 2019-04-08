@@ -42,7 +42,7 @@ class PostNote {
   }
 
   post() {
-    return post('/cards', this.toJSON());
+    return post(this.toJSON());
   }
 }
 
