@@ -8,15 +8,28 @@ class Section extends Component {
 		super(props);
 		this.state = {
 			show: (this.props.time === "Today"),
-		}
+		};
 
 		this.handleshowchange = this.handleshowchange.bind(this);
+		this.setStartEndDays = this.setStartEndDays.bind(this);
+
+		this.setStartEndDays(this.props.time);
 	}
 
 	handleshowchange() {
 		this.setState({
 			show: !this.state.show
 		});
+	}
+
+	setStartEndDays(time) {
+		switch (time) {
+			case "Today":
+				break;
+			case "Yesterday":
+				break;
+			
+		}
 	}
 
 	render() {

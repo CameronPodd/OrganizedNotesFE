@@ -17,19 +17,11 @@ class StatusBar extends Component {
 	render() {
 		return (
 			<div className="StatusBar">
-				<table>
-					<tbody>
-						<tr>
-							<td id="empty"></td>
-							<td id="statusBarText">
-								<span id="statusBarText">{this.props.time}</span>
-							</td>
-							<td id="Arrow">
-								<img id="arrow" src={Arrow} alt="arrow" class={this.props.show ? 'flipped' : null} onClick={this.handleClick}/>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+				<div id="empty" />
+				<div id="statusBarText">{this.props.time}</div>
+				<div id="Arrow">
+					<img id="arrow" src={Arrow} alt="arrow" className={this.props.show ? 'flipped' : null} onClick={this.handleClick}/>
+				</div>
 			</div>
 		);
 	}

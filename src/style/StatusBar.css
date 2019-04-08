@@ -15,27 +15,20 @@
 	cursor: pointer;
 }
 
-table { 
-	border-spacing: 0;
-	width: 100%;
-}
-
-td {
-	padding: 0;
-	height: 50px;
-}
-
-td#empty {
+#empty {
+	display: inline-block;
 	width: 10%;
 }
 
-td#statusBarText {
+#statusBarText {
+	display: inline-block;
 	color: black;
 	font-size: 24pt;
 	width: 80%;
 }
 
-td#Arrow {
+#Arrow {
+	display: inline-block;
 	width: 10%;
 }
 
