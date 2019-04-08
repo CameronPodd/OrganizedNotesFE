@@ -1,4 +1,5 @@
 .EditCardPopup {
+	position: absolute;
     height: 450px;
     width: 75%;
 	background: white;
