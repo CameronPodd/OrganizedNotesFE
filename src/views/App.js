@@ -5,11 +5,21 @@ import TopBar from '../components/TopBar';
 
 class App extends Component {
 
+	constructor(props) {
+		super(props);
+		this.today = React.createRef();
+		this.addCard = this.addCard.bind(this);
+	}
+
+	addCard() {
+		this.today.current.getCards();
+	}
+
 	render() {
 		return (
 			<div className="App">
-				<TopBar />
-				<Section time="Today" />
+				<TopBar addCard={this.addCard} />
+				<Section ref={this.today} time="Today" />
 				<Section time="Yesterday" />
 				<Section time="This Week" />
 				<Section time="This Month" />

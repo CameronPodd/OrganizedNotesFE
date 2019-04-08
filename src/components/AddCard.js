@@ -26,7 +26,7 @@ class AddCard extends Component {
 				<button id="openDio" onClick={this.togglePopup}>
 					{this.state.showPopup ? "Cancel": "Add Note"}
 				</button>
-				{this.state.showPopup ? <AddCardPopup togglePopup={this.togglePopup} /> : null}
+				{this.state.showPopup ? <AddCardPopup togglePopup={this.togglePopup} addCard={this.props.addCard} /> : null}
 			</div>
 		);
 	}

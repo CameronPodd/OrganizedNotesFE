@@ -9,3 +9,55 @@
 	text-align: center;
 	margin: 5px;
 }
+
+#Header {
+	border-bottom: 1px solid grey;
+	height: 25px;
+	overflow: hidden;
+}
+
+.edit {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	width: 30px;
+	height: 25px;
+}
+
+.Title {
+	margin: 0;
+	padding: 0;
+	text-emphasis: bold;
+	display: inline-block;
+	width: 130px;
+	height: 25px;
+}
+
+.trash {
+	display: inline-block;
+	margin-right: 10px;
+	margin-top: 2.5px;
+	margin-bottom: 2.5px;
+	width: 20px;
+	height: 20px;
+}
+
+.Body {
+	height: 150px;
+	font-size: 10pt;
+	width: 190px;
+	overflow-y: scroll;
+	overflow-wrap: break-word;
+	-ms-overflow-style: none;
+	overflow: -moz-scrollbars-none;
+	border-bottom: 1px solid grey;
+}
+
+.Body::-webkit-scrollbar {
+  width: 0 !important
+}
+
+.Footer {
+	font-size: 9.5pt;
+	color: grey;
+}

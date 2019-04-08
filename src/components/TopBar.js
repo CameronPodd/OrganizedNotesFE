@@ -15,7 +15,7 @@ class TopBar extends Component {
 								<img id="logo" src={Logo} alt="logo"/>
 							</td>
 							<td id="Title">Quick and Organized Notes</td>
-							<td id="AddCard"><AddCard /></td>
+							<td id="AddCard"><AddCard addCard={this.props.addCard}/></td>
 						</tr>
 						</tbody>
 				</table>

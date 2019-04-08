@@ -117,17 +117,33 @@ class Section extends Component {
 	removeCard(id) {
 		let cards = this.state.cards;
 
-		let cardinq = 0;
+		let cardinq = -1;
 		for(let i = 0; i < cards.length; i++) {
-			if (cards[i].id === id) {
+			if (cards[i]._id === id) {
 				cardinq = i;
 				break;
 			}
 		}
 
-		cards.splice(cardinq);
+		cards.splice(cardinq, 1);
 
+		this.setState({
+			"cards": cards
+		});
 		del(id);
+	}
+
+	getCards() {
+		getByDate(this.state.sm, this.state.em, this.state.sd, this.state.ed)
+		.then(res => {
+			let cards = res.data.cards;
+			this.setState({
+				"cards": cards
+			});
+		})
+		.catch(err => {
+			console.log(err);
+		})
 	}
 }
 
