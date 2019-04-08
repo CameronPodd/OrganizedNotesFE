@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import StatusBar from './StatusBar';
-import {getByDate, del } from '../classes/httprequests';
+import {getByDate, del, put } from '../classes/httprequests';
 import '../style/Section.css';
 import CardHolder from './CardHolder';
 
@@ -11,6 +11,8 @@ class Section extends Component {
 
 		this.handleshowchange = this.handleshowchange.bind(this);
 		this.removeCard = this.removeCard.bind(this);
+		this.editCard = this.editCard.bind(this);
+		this.getCards = this.getCards.bind(this);
 
 		let date = new Date();
 		let day = date.getDate();
@@ -109,7 +111,7 @@ class Section extends Component {
 		return (
 			<div className="StatusArea">
 				<StatusBar time={this.props.time} show={this.state.show} showHandler={this.handleshowchange} />
-				{this.state.show ? <CardHolder cards={this.state.cards} removeCard={this.removeCard} /> : null}
+				{this.state.show ? <CardHolder cards={this.state.cards} removeCard={this.removeCard} editCard={this.editCard} /> : null}
 			</div>
 		);
 	}
@@ -131,6 +133,16 @@ class Section extends Component {
 			"cards": cards
 		});
 		del(id);
+	}
+
+	editCard(card) {
+		put(card.toJSON())
+			.then(res => {
+				this.getCards();
+			})
+			.catch ((err) => {
+				console.error(err);
+			});
 	}
 
 	getCards() {

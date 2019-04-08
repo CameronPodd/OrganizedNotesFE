@@ -1,11 +1,7 @@
-
-
-.EditCardPopup {
-    position: absolute;
+.AddCardPopup {
+	position: absolute;
     display: block;
     height: 450px;
-    margin-top: 48px;
-    margin-left: -62.5%;
     width: 75%;
 	background: white;
 	border-radius: 30px;

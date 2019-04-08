@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
+import EditCardPopup from './EditCardPopup';
 import '../style/Card.css';
 import Trash from '../assets/trash.png';
+import Edit from '../assets/edit.png';
 
 class Card extends Component {
 
 	constructor(props) {
 		super(props);
-
+		this.state = {
+			showPopup: false
+		}
 		this.handleClick = this.handleClick.bind(this);
+		this.togglePopup = this.togglePopup.bind(this);
+	}
+
+	togglePopup() {
+		this.setState(state => ({
+			showPopup: !state.showPopup
+		}));
 	}
 
 	handleClick() {
@@ -22,8 +33,9 @@ class Card extends Component {
 		}
 		return (
 			<div className="Card">
+				{this.state.showPopup ? <EditCardPopup togglePopup={this.togglePopup} editCard={this.props.editCard} data={this.props.data} /> : null}
 				<div id="Header">
-					<div className="edit"></div>
+					<img src={Edit} alt="edit" className="edit" onClick={this.togglePopup}/>
 					<div className="Title"><strong>{this.props.data.title}</strong></div>
 					<img src={Trash} alt="trash" className="trash" onClick={this.handleClick}/>
 				</div>
