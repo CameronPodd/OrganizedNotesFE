@@ -19,7 +19,7 @@ class CardHolder extends Component {
     for (let i = 0; i < rows; i++) {
       let cdsnew = this.props.cards;
       let cds = cdsnew.slice(cpr * i, cpr * (i + 1));
-      rend.push(<Row cards={cds} removeCard={this.props.removeCard} editCard={this.editCard} key={i} />);
+      rend.push(<Row getCards={this.props.getCards} cards={cds} removeCard={this.props.removeCard} editCard={this.editCard} key={i} />);
     }
 		return (
       <div id="CardHolder">

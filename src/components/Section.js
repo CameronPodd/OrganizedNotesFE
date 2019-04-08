@@ -111,7 +111,7 @@ class Section extends Component {
 		return (
 			<div className="StatusArea">
 				<StatusBar time={this.props.time} show={this.state.show} showHandler={this.handleshowchange} />
-				{this.state.show ? <CardHolder cards={this.state.cards} removeCard={this.removeCard} editCard={this.editCard} /> : null}
+				{this.state.show ? <CardHolder getCards={this.getCards} cards={this.state.cards} removeCard={this.removeCard} editCard={this.editCard} /> : null}
 			</div>
 		);
 	}

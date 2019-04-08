@@ -33,7 +33,6 @@ class Card extends Component {
 		}
 		return (
 			<div className="Card">
-				{this.state.showPopup ? <EditCardPopup togglePopup={this.togglePopup} editCard={this.props.editCard} data={this.props.data} /> : null}
 				<div id="Header">
 					<img src={Edit} alt="edit" className="edit" onClick={this.togglePopup}/>
 					<div className="Title"><strong>{this.props.data.title}</strong></div>
@@ -48,11 +47,14 @@ class Card extends Component {
 				<div className="Footer">
 					Created at {this.props.data.time.month + 1}-{this.props.data.time.day}-
 					{this.props.data.time.year} at {" "}
-					{(this.props.data.time.hours - 12) < 1 ? this.props.data.time.hours : this.props.data.time.hours - 12}:
+					{(this.props.data.time.hours - 12) < 1 ? (this.props.data.time.hours === 0 ? 12 : this.props.data.time.hours) : this.props.data.time.hours - 12}:
 					{this.props.data.time.minutes < 10 ? "0" : ""}{this.props.data.time.minutes}
 					{" "}{(this.props.data.time.hours - 12) < 1 ? "AM" : "PM"}
 				</div>
-      </div>
+				<div id="EditCardPopup">
+					{this.state.showPopup ? <EditCardPopup getCards={this.props.getCards} togglePopup={this.togglePopup} editCard={this.props.editCard} data={this.props.data} /> : null}
+				</div>
+			</div>
 		);
 	}
 }

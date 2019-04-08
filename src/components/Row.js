@@ -7,7 +7,7 @@ class Row extends Component {
   render() {
     let rend = []
     for (let i = 0; i < this.props.cards.length; i++) {
-      rend.push(<Card data={this.props.cards[i]} removeCard={this.props.removeCard} editCard={this.editCard} key={i} />);
+      rend.push(<Card getCards={this.props.getCards} data={this.props.cards[i]} removeCard={this.props.removeCard} editCard={this.editCard} key={i} />);
     }
     return (
       <div className="Row">

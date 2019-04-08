@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import EditNote from '../classes/EditNote';
 import '../style/EditCardPopup.css';
 
 class EditCardPopup extends Component {
@@ -7,6 +8,7 @@ class EditCardPopup extends Component {
     super(props);
 
     this.state = {
+      _id: this.props.data._id,
       name: this.props.data.title,
       nchange: false,
       body: this.props.data.body,
@@ -24,7 +26,6 @@ class EditCardPopup extends Component {
     this.handleL0Change = this.handleL0Change.bind(this);
     this.handleL1Change = this.handleL1Change.bind(this);
     this.handleL2Change = this.handleL2Change.bind(this);
-    this.close = this.close.bind(this);
   }
 
   handleNameChange(e) {
@@ -49,19 +50,15 @@ class EditCardPopup extends Component {
 
   editCard(e) {
     e.preventDefault();
-    let editNote = null//new EditNote(this.state);
+    let editNote = new EditNote(this.state);
     this.props.togglePopup();
-    editNote.post()
+    editNote.put()
       .then(res => {
-        this.props.addCard();
+        this.props.getCards();
       })
       .catch(err => {
         console.log(err);
       })
-  }
-
-  close() {
-    this.props.togglePopup();
   }
 
 	render() {
