@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "768365787f3304def57a",
-    "url": "/OrganizedNotesFE/static/css/main.1bbe48d2.chunk.css"
+    "revision": "4fb5dc8767c0457af021",
+    "url": "/OrganizedNotesFE/static/css/main.0514a29a.chunk.css"
   },
   {
-    "revision": "768365787f3304def57a",
+    "revision": "4fb5dc8767c0457af021",
     "url": "/OrganizedNotesFE/static/js/main.4599dcf7.chunk.js"
   },
   {
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/OrganizedNotesFE/static/media/Logo.b6acdd91.jpg"
   },
   {
-    "revision": "a4b5a2c3a814ed3338b2b0fcf62a8af5",
+    "revision": "3f5369ba087c60cb017ec7ab3e8686bb",
     "url": "/OrganizedNotesFE/index.html"
   }
 ];
